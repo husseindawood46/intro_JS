@@ -1,17 +1,14 @@
-let x = 10;
-if (x >= 10) {
-  console.log("x>=10");
-} else if (x >= 5) {
-  console.log("x>=5");
-} else {
-  console.log("x<5");
-}
-
-let arr = [10, 20, 30, 40, 50];
-for (let i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
-}
-function fullName(firstName, LastName) {
-  console.log(firstName + " " + LastName);
-}
-fullName("Hussein", "Mohamed");
+const data = async () => {
+  let index = Math.floor(Math.random() * 100);
+  const data = await fetch(
+    `https://via.assets.so/movie.png?id=${index}&q=95&w=360&h=360&fit=fill`
+  );
+  const result = await data.url;
+  console.log(result)
+  setInterval(() => {
+    document.getElementById(
+      "display"
+    ).innerHTML += `<img  id="display" src="${result}" alt="">`;
+  }, 6000);
+};
+data();
